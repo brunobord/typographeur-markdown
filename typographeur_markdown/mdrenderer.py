@@ -66,15 +66,17 @@ class NoneRenderer(Renderer):
         return f":list-item:{text}"
 
     def list(self, text, ordered=True):
-        prefix = "* "
-        if ordered:
-            prefix = '#. '
         # split body
         body = []
         list_items = text.split(':list-item:')
+        number = 1
         for item in list_items:
             if item:
-                body.append(f"{prefix}{item}")
+                if ordered:
+                    body.append(f'{number}. {item}')
+                    number += 1
+                else:
+                    body.append(f"* {item}")
         body = "\n".join(body)
         return f"{body}\n\n"
 

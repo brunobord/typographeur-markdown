@@ -1,8 +1,7 @@
 # from typographeur import typographeur
 from argparse import ArgumentParser, FileType
 import sys
-import mistune
-from .mdrenderer import NoneRenderer
+from .core import render
 
 
 __version__ = '0.0.0'
@@ -24,13 +23,11 @@ def main():
         help="Path for the output file", default=sys.stdout)
     args = parser.parse_args()
 
-    renderer = NoneRenderer()
-    markdown = mistune.Markdown(renderer=renderer)
     if args.file:
         content = args.file.read()
-        result = markdown.render(content)
+        result = render(content)
     else:
-        result = markdown.render(sys.stdin.read())
+        result = render(sys.stdin.read())
 
     args.output.write(result)
 
