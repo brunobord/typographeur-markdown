@@ -2,6 +2,9 @@
 
 > Faire respecter les règles typographiques françaises en Markdown.
 
+[![Build Status](https://travis-ci.org/brunobord/typographeur-markdown.svg?branch=master)](https://travis-ci.org/brunobord/typographeur-markdown)
+![Python versions: 3.6, 3.7](https://img.shields.io/pypi/pyversions/typographeur-markdown.svg)
+
 Ce paquetage offre la possibilité d'appliquer un certain nombre de règles de typographie française sur des documents écrits en Markdown (ou plus précisément le Markdown de Github, celui qui inclut les tableaux et les blocs de code bornés par des contre-quotes).
 
 Il utilise les règles implémentées dans le paquet [`typographeur`](https://github.com/brunobord/typographeur).
