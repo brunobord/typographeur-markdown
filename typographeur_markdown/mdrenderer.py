@@ -26,6 +26,17 @@ class NoneRenderer(Renderer):
     def __init__(self,
                  typographeur_func=typographeur,
                  emphasis_mark='*', double_emphasis_mark="**", **kwargs):
+        """
+        A mistune Renderer that "converts" from Markdown to Markdown.
+
+        :param typographeur_func: the function that will apply typographic
+                                  rules to the rendered content. Default value
+                                  is the `typographeur` from the `typographeur`
+                                  module.
+        :param emphasis_mark: markup used to apply an simple emphasis.
+        :param double_emphasis_mark: markup used to apply an double (or strong)
+                                     emphasis.
+        """
         self.typographeur_func = typographeur_func
         self.options = kwargs
         self.options['emphasis_mark'] = emphasis_mark
